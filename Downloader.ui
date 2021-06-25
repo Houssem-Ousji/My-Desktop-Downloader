@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>783</width>
-    <height>375</height>
+    <width>772</width>
+    <height>363</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>781</width>
+      <width>1021</width>
       <height>381</height>
      </rect>
     </property>
@@ -121,7 +121,7 @@ QTabBar::tab:!selected {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -130,7 +130,7 @@ QTabBar::tab:!selected {
      <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
-        <x>340</x>
+        <x>310</x>
         <y>200</y>
         <width>201</width>
         <height>31</height>
@@ -212,6 +212,25 @@ QTabBar::tab:!selected {
        <string>Save Location</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>190</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>images/file.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -220,7 +239,7 @@ QTabBar::tab:!selected {
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>340</x>
+        <x>310</x>
         <y>260</y>
         <width>201</width>
         <height>31</height>
@@ -325,6 +344,25 @@ QTabBar::tab:!selected {
        <string>Quality Search</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>260</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>images/youtube.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
@@ -392,7 +430,7 @@ QTabBar::tab:!selected {
      <widget class="QPushButton" name="pushButton_13">
       <property name="geometry">
        <rect>
-        <x>340</x>
+        <x>310</x>
         <y>260</y>
         <width>201</width>
         <height>31</height>
@@ -433,6 +471,25 @@ QTabBar::tab:!selected {
         <width>251</width>
         <height>31</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>260</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>images/playlist.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
