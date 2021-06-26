@@ -131,7 +131,7 @@ QTabBar::tab:!selected {
       <property name="geometry">
        <rect>
         <x>310</x>
-        <y>210</y>
+        <y>200</y>
         <width>201</width>
         <height>31</height>
        </rect>
@@ -216,7 +216,7 @@ QTabBar::tab:!selected {
       <property name="geometry">
        <rect>
         <x>540</x>
-        <y>200</y>
+        <y>190</y>
         <width>41</width>
         <height>41</height>
        </rect>
