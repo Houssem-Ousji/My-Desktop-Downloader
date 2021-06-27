@@ -6,11 +6,13 @@ from PyQt5.uic import loadUiType
 
 #import os and sys
 import sys
-from os import path
+
 
 import urllib.request
 import pafy
+from pytube import Playlist
 import humanize
+
 ui,_ = loadUiType('Downloader.ui')
 
 class Mainapp(QMainWindow, ui):
@@ -48,10 +50,8 @@ class Mainapp(QMainWindow, ui):
         self.pushButton_5.clicked.connect(self.Quality_section_2)
 
         # Butttons of the section 3
-
-
-
-
+        self.pushButton_13.clicked.connect(self.Handle_Download_Youtube_Playlist)
+        self.pushButton_11.clicked.connect(self.Browse_section_3)
 
 ############################# Start first section ################################
     # Saving and Showing the path of the first section
@@ -71,6 +71,10 @@ class Mainapp(QMainWindow, ui):
         # Taking the data
         url = self.lineEdit_3.text()
         path = self.lineEdit_4.text()
+        while path == '':
+            QMessageBox.warning(self, "Error", "Choose Folder Please")
+            self.Browse_section_1()
+            path = self.lineEdit_4.text()
 
         # Make the Download
         try:
@@ -86,7 +90,7 @@ class Mainapp(QMainWindow, ui):
 ############################# END first section ################################
 
 ############################# Start Second section ################################
-    # Saving and Showing the path of the seconb section
+    # Saving and Showing the path of the second section
     def Browse_section_2(self):
         location = QFileDialog.getExistingDirectory(self, caption= "Choose Folder", directory="C:/Users/HOUSSEM/Desktop")
         self.lineEdit_2.setText(location)
@@ -112,7 +116,7 @@ class Mainapp(QMainWindow, ui):
         percentage = (Data_recieved[1] / Data_recieved[0]) *100
         self.progressBar.setValue(int(percentage))
         QApplication.processEvents()
-    
+
     # Download the Youtube Video
     def Handle_Download_Youtube_Video(self):
         url = self.lineEdit.text()
@@ -125,6 +129,10 @@ class Mainapp(QMainWindow, ui):
             test = False
         if test == True:
             path = self.lineEdit_2.text()
+            while path == '':
+                QMessageBox.warning(self, "Error", "Choose Folder Please")
+                self.Browse_section_2()
+                path = self.lineEdit_2.text()
             video_index = self.comboBox.currentIndex()
             try:
                 Download = video.allstreams[video_index].download(filepath=path, callback=self.Handle_Progress_Bar_Section_2)
@@ -136,15 +144,69 @@ class Mainapp(QMainWindow, ui):
             self.lineEdit.setText('')
             self.lineEdit_2.setText('')
             self.comboBox.clear()
-############################# END first section ################################
+############################# END second section ################################
 
+############################# Start Third section ################################
+    # Saving and Showing the path of the Third section
+    def Browse_section_3(self):
+        location = QFileDialog.getExistingDirectory(self, caption="Choose Folder", directory="C:/Users/HOUSSEM/Desktop")
+        self.lineEdit_9.setText(location)
 
+    # Making the Progress bar
+    def Handle_Progress_Bar_section_3(self, *Data_recieved):
+        percentage = (Data_recieved[1] / Data_recieved[0])*100
+        self.progressBar_5.setValue(int(percentage))
+        QApplication.processEvents()
 
+    # Download the Youtube Video
+    def Handle_Download_Youtube_Playlist(self):
+        url = self.lineEdit_10.text()
+        path = self.lineEdit_9.text()
+        while path == '':
+            QMessageBox.warning(self, "Error", "Choose Folder Please")
+            self.Browse_section_3()
+            path = self.lineEdit_9.text()
 
-
-
-
-
+        test = True
+        test_2 = True
+        try:
+            My_Playlist = Playlist(url)
+        except:
+            QMessageBox.warning(self, "Error 404", "Url Doesn't exist !")
+            self.lineEdit_10.setText('')
+            test = False
+        if test:
+            for url_video in My_Playlist:
+                  try:
+                        video = pafy.new(url_video)
+                  except:
+                        QMessageBox.warning(self,"Error 404", "Download of '{}' Failed".format(video.title))
+                        test_2 = False
+                  if test_2 and self.comboBox_3.currentIndex() == 0:
+                      try:
+                          self.lineEdit_11.setText("Downloading {}".format(video.title))
+                          Download = video.getbestaudio().download(filepath=path, callback=self.Handle_Progress_Bar_section_3)
+                      except:
+                          QMessageBox.warning(self, "Error 404", "Download of '{}' Failed".format(video.title))
+                  elif test_2 and self.comboBox_3.currentIndex() == 1:
+                      try:
+                          self.lineEdit_11.setText("Downloading {}".format(video.title))
+                          Download = video.getbestvideo().download(filepath=path, callback=self.Handle_Progress_Bar_section_3)
+                      except:
+                          QMessageBox.warning(self, "Error 404", "Download of '{}' Failed".format(video.title))
+                  elif test_2 and self.comboBox_3.currentIndex() == 2:
+                      try:
+                          self.lineEdit_11.setText("Downloading {}".format(video.title))
+                          Download = video._getbest().download(filepath=path, callback=self.Handle_Progress_Bar_section_3)
+                      except:
+                          QMessageBox.warning(self, "Error 404", "Download of '{}' Failed".format(video.title))
+            QMessageBox.information(self, "Download Done", "successful download")
+            # Reset The Inputs
+            self.lineEdit_10.setText('')
+            self.lineEdit_9.setText('')
+            self.lineEdit_11.setText('')
+            self.progressBar_5.setValue(0)
+############################# END Third section ################################
 def main():
     app = QApplication(sys.argv)
     window = Mainapp()
