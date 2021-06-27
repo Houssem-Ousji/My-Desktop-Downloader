@@ -1,7 +1,5 @@
 # import pyqt5 libraries
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
 from PyQt5.uic import loadUiType
 
 #import os and sys
@@ -180,7 +178,6 @@ class Mainapp(QMainWindow, ui):
                   try:
                         video = pafy.new(url_video)
                   except:
-                        QMessageBox.warning(self,"Error 404", "Download of '{}' Failed".format(video.title))
                         test_2 = False
                   if test_2 and self.comboBox_3.currentIndex() == 0:
                       try:
