@@ -437,8 +437,6 @@ class Ui_MainWindow(object):
         self.pushButton_13.setText(_translate("MainWindow", "Download"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Download Youtube\'s Playlist"))
 ############################# END Third section ################################
-
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
