@@ -7,7 +7,6 @@ import pafy
 import humanize
 from pytube import Playlist
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -139,7 +138,7 @@ class Ui_MainWindow(object):
         self.label_5 = QtWidgets.QLabel(self.tab_2)
         self.label_5.setGeometry(QtCore.QRect(540, 190, 41, 41))
         self.label_5.setText("")
-        self.label_5.setPixmap(QtGui.QPixmap("C:\\Users\\HOUSSEM\\PycharmProjects\\pythonProject1\\my projects with pyqt5\\images/file.png"))
+        self.label_5.setPixmap(QtGui.QPixmap(r"E:\developpement\projects\My_Desktop_Downloader\My-Desktop-Downloader\images\file.png"))
         self.label_5.setScaledContents(True)
         self.label_5.setObjectName("label_5")
         self.tabWidget.addTab(self.tab_2, "")
@@ -176,7 +175,7 @@ class Ui_MainWindow(object):
         self.label_6 = QtWidgets.QLabel(self.tab)
         self.label_6.setGeometry(QtCore.QRect(550, 260, 51, 31))
         self.label_6.setText("")
-        self.label_6.setPixmap(QtGui.QPixmap("C:\\Users\\HOUSSEM\\PycharmProjects\\pythonProject1\\my projects with pyqt5\\images/youtube.png"))
+        self.label_6.setPixmap(QtGui.QPixmap(r"E:\developpement\projects\My_Desktop_Downloader\My-Desktop-Downloader\images\youtube.png"))
         self.label_6.setScaledContents(True)
         self.label_6.setObjectName("label_6")
         self.tabWidget.addTab(self.tab, "")
@@ -213,7 +212,7 @@ class Ui_MainWindow(object):
         self.label_7 = QtWidgets.QLabel(self.tab_3)
         self.label_7.setGeometry(QtCore.QRect(550, 260, 31, 31))
         self.label_7.setText("")
-        self.label_7.setPixmap(QtGui.QPixmap("C:\\Users\\HOUSSEM\\PycharmProjects\\pythonProject1\\my projects with pyqt5\\images/playlist.png"))
+        self.label_7.setPixmap(QtGui.QPixmap(r"E:\developpement\projects\My_Desktop_Downloader\My-Desktop-Downloader\images\playlist.png"))
         self.label_7.setScaledContents(True)
         self.label_7.setObjectName("label_7")
         self.tabWidget.addTab(self.tab_3, "")
