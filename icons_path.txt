@@ -1,4 +1,4 @@
 when you Clone the repo you have to change the icons path in the file "final_app.py"
-first icon : path : .....\images\file.png; Code line : 141
-second icon : path : ....\images\youtube.png; Code line : 178
-third icon : path : .....\images\playlist.png; Code line : 215
+first icon : path : .....My-Desktop-Downloader\images\file.png; Code line : 141
+second icon : path : ....My-Desktop-Downloader\images\youtube.png; Code line : 178
+third icon : path : .....My-Desktop-Downloader\images\playlist.png; Code line : 215
