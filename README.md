@@ -15,7 +15,7 @@
    * Humanize : To convert The filesize
    * pafy : To Download Youtube videos and Playlists 
    * pytube : To get The video's url in the case of Playlist
-   # Note : I had a Problem when i get the Playlist Url with pafy who can not Read it so i use pytube for Read the url then i pass the video's url to pafy one bye one
+  
    ___
    ## Section 1: Downloading Files
    ![section_1](https://user-images.githubusercontent.com/86334640/123672649-dac7d280-d83f-11eb-81d5-32695d9b8a91.PNG)
